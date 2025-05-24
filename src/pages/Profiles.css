@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page {
+  @apply min-h-screen bg-gray-100 py-8;
+}
+
+.container-wrapper {
+  @apply container mx-auto px-4;
+}
+
+.heading {
+  @apply text-3xl font-bold mb-6 text-center text-gray-800;
+}
+
+.filters {
+  @apply flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 space-y-4 sm:space-y-0;
+}
+
+.input-box {
+  @apply w-full sm:w-1/3 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.select-group {
+  @apply flex space-x-4;
+}
+
+.select-box {
+  @apply border border-gray-300 rounded px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.grid-layout {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-md p-6 text-center transform transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.avatar {
+  @apply h-24 w-24 rounded-full mx-auto object-cover;
+}
+
+.name {
+  @apply mt-4 text-xl font-semibold text-gray-800;
+}
+
+.title,
+.department {
+  @apply text-gray-600;
+}
+
+.email,
+.phone {
+  @apply text-sm text-gray-500;
+}
+
+.email {
+  @apply mt-2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
