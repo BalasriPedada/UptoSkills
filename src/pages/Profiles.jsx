@@ -75,7 +75,7 @@ export default function Profiles() {
         <div className="grid-layout">
           {filtered.map(emp => (
             <div key={emp.id} className="card">
-              <img className="avatar" src="https://via.placeholder.com/100" alt={emp.name} />
+              <img className="avatar" src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${emp.name.split(' ')[0]}`} alt={emp.name} />
               <h2 className="name">{emp.name}</h2>
               <p className="title">{emp.jobTitle}</p>
               <p className="department">{emp.department}</p>
