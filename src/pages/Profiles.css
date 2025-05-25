@@ -60,6 +60,49 @@
 .email {
   @apply mt-2;
 }
+/* dimmed background behind the panel */
+.detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* the white “card” in the center */
+.detail-panel {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* close button in the top-right */
+.detail-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* large avatar */
+.avatar-large {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
 
 @keyframes fadeIn {
   from {
