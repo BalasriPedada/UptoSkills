@@ -1,27 +1,25 @@
-import './App.css';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Home from './pages/Home';
-import Register from './pages/Register';
-import Login from './pages/Login';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+
 import Profiles from './pages/Profiles';
+import ProfileDetails from './pages/ProfileDetail';
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <nav style={{ padding: '1rem', backgroundColor: '#eee' }}>
-        <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
-        <Link to="/profiles" style={{ marginRight: '1rem' }}>Profiles</Link>
-        <Link to="/login" style={{ marginRight: '1rem' }}>Login</Link>
-        <Link to="/register">Register</Link>
-      </nav>
-
+    <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/profiles' element={<Profiles />} />
+        {/* Redirect root to /profiles */}
+        <Route path="/" element={<Navigate to="/profiles" replace />} />
+
+        {/* Profiles list */}
+        <Route path="/profiles" element={<Profiles />} />
+
+        {/* Profile detail page */}
+        <Route path="/profile/:id" element={<ProfileDetails />} />
+
+        {/* Catch-all route for unmatched URLs */}
+        <Route path="*" element={<h2>404 - Page Not Found</h2>} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
-export default App;
